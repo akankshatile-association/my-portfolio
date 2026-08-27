@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+@layer base {
+  :root {
+    --background: 231 57% 9%;
+    --foreground: 210 20% 98%;
+    --card: 229 53% 13%;
+    --card-foreground: 210 20% 98%;
+    --popover: 229 53% 13%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263.4 70% 50.4%;
+    --radius: 0.5rem;
+
+    --background-dark: #050816;
+    --background-secondary: #0a0f24;
+    --background-card-dark: #0f1633;
+    --background-light: #f8fafc;
+    --card-background: #ffffff;
+
+    --primary-violet: #7c3aed;
+    --primary-light: #8b5cf6;
+    --primary-bright: #a855f7;
+    --primary-soft: #c084fc;
+
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-dark: #0f172a;
+
+    --border-dark: #1e293b;
+    --border-light: #e2e8f0;
+
+    --success: #22c55e;
+    --warning: #f59e0b;
+    --error: #ef4444;
+
+    --purple-glow: rgba(124, 58, 237, 0.35);
+    --purple-glow-light: rgba(139, 92, 246, 0.18);
+
+    --gradient-primary: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+    --gradient-dark: linear-gradient(135deg, #050816 0%, #0f1633 100%);
+    --gradient-purple: linear-gradient(135deg, #6d28d9 0%, #a855f7 100%);
+  }
+
+  .dark {
+    --background: 231 57% 6%;
+    --foreground: 210 20% 98%;
+    --card: 229 53% 13%;
+    --card-foreground: 210 20% 98%;
+    --popover: 229 53% 13%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 255 91% 67%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 255 91% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(
+        circle at 75% 0%,
+        rgba(168, 85, 247, 0.12),
+        transparent 28%
+      ),
+      linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+    color: var(--text-dark);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    color-scheme: light;
+  }
+
+  ::selection {
+    background: rgba(124, 58, 237, 0.22);
+    color: #ffffff;
+  }
+}
+
+.blog-post h1 {
+  font-size: 2.5em;
+}
+
+.blog-post h2 {
+  font-size: 2em;
+}
+
+.blog-post h3 {
+  font-size: 1.75em;
+}
+
+.blog-post h4 {
+  font-size: 1.5em;
+}
+
+.blog-post h5 {
+  font-size: 1.25em;
+}
+
+.blog-post h6 {
+  font-size: 1em;
+}
+
+.blog-post p {
+  margin: 0 0 1.5em;
+}
+
+.blog-post a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.blog-post a:hover {
+  text-decoration: underline;
+}
+
+.blog-post strong {
+  font-weight: bold;
+}
+
+.blog-post em {
+  font-style: italic;
+}
+
+.blog-post blockquote {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  border-left: 5px solid var(--primary-violet);
+}
+
+.blog-post ul,
+.blog-post ol {
+  margin: 0 0 1.5em 1.5em;
+}
+
+.blog-post li {
+  margin-bottom: 0.5em;
+}
+
+.blog-post code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(15, 22, 51, 0.9);
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: var(--primary-soft);
+}
+
+.blog-post pre {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--background-card-dark);
+  padding: 10px;
+  border-radius: 4px;
+  overflow: auto;
+  border: 1px solid var(--border-dark);
+}
+
+.blog-post img {
+  max-width: 100%;
+  height: auto;
+}
+
+.blog-post figure {
+  margin: 0 0 1.5em;
+}
+
+.blog-post figcaption {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.blog-post hr {
+  border: 0;
+  height: 1px;
+  background: var(--border-dark);
+  margin: 2em 0;
+}
+
+@media (max-width: 768px) {
+  .blog-post h1 {
+    font-size: 2em;
+  }
+
+  .blog-post h2 {
+    font-size: 1.75em;
+  }
+
+  .blog-post h3 {
+    font-size: 1.5em;
+  }
+
+  .blog-post h4 {
+    font-size: 1.25em;
+  }
+
+  .blog-post h5 {
+    font-size: 1em;
+  }
+
+  .blog-post h6 {
+    font-size: 0.875em;
+  }
+}
+
+body.dark {
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(168, 85, 247, 0.2),
+      transparent 30%
+    ),
+    var(--background-dark);
+  color: var(--text-secondary);
+  color-scheme: dark;
+}
