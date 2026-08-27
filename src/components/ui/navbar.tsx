@@ -10,6 +10,7 @@ import {
   LinkedInLogoIcon,
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
+import ThemeToggler from "@/components/ui/themeToggler";
 
 export default async function Navbar() {
   const data = await getJSONData();
@@ -45,6 +46,8 @@ export default async function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <ThemeToggler />
+
             <Button
               asChild
               className="hidden rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-500 px-5 text-white shadow-[0_0_24px_rgba(124,58,237,0.35)] hover:from-violet-500 hover:to-fuchsia-400 lg:inline-flex"
@@ -71,9 +74,12 @@ export default async function Navbar() {
                 className="border-white/10 bg-[#050816] text-white"
               >
                 <div className="grid gap-6 p-6 pt-10">
-                  <Link href="/" prefetch={false} className="flex items-center">
-                    <Image src="/assets/logo.png" height={56} width={56} alt={"devfolio logo"} />
-                  </Link>
+                  <div className="flex items-center justify-between gap-4">
+                    <Link href="/" prefetch={false} className="flex items-center">
+                      <Image src="/assets/logo.png" height={56} width={56} alt={"devfolio logo"} />
+                    </Link>
+                    <ThemeToggler />
+                  </div>
 
                   <div className="grid gap-4">
                     {links.map((item) => (
